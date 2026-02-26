@@ -3,6 +3,8 @@
 [![License][license-shield]](LICENSE)
 [![hacs][hacsbadge]][hacs]
 
+*Read this in other languages: [English](README.md), [Français](README.fr.md).*
+
 [releases-shield]: https://img.shields.io/github/release/tartempio/iHost-Connect.svg?style=for-the-badge
 [releases]: https://github.com/tartempio/iHost-Connect/releases
 [commits-shield]: https://img.shields.io/github/commit-activity/y/tartempio/iHost-Connect.svg?style=for-the-badge
