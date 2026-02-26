@@ -1,0 +1,36 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Connexion au iHost",
+                "description": "Entrez l'adresse IP de votre iHost.",
+                "data": {
+                    "ip_address": "Adresse IP"
+                }
+            },
+            "zeroconf_confirm": {
+                "title": "iHost découvert",
+                "description": "Voulez-vous configurer le iHost découvert à l'adresse {ip_address} ?"
+            },
+            "link": {
+                "title": "Association du iHost",
+                "description": "Veuillez ouvrir [l'interface web de votre iHost](http://{ip_address}) dans un nouvel onglet. **Une fois la page ouverte**, cliquez sur Valider ici, puis retournez immédiatement sur l'onglet de l'iHost pour approuver la demande de connexion."
+            }
+        },
+        "error": {
+            "cannot_connect": "Échec de la connexion au iHost.",
+            "button_not_pressed": "La connexion n'a pas été approuvée. Veuillez vous connecter à l'interface web du iHost pour approuver la connexion puis réessayez.",
+            "unknown": "Erreur inattendue"
+        },
+        "abort": {
+            "already_configured": "L'appareil est déjà configuré"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "last_boot": {
+                "name": "Dernier démarrage"
+            }
+        }
+    }
+}

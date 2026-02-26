@@ -1,0 +1,36 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Connect to iHost",
+                "description": "Enter the IP Address of your iHost.",
+                "data": {
+                    "ip_address": "IP Address"
+                }
+            },
+            "zeroconf_confirm": {
+                "title": "Discovered iHost",
+                "description": "Do you want to configure the iHost discovered at {ip_address}?"
+            },
+            "link": {
+                "title": "Link iHost",
+                "description": "Please open the [iHost web interface](http://{ip_address}) in a new tab. **Once the page is open**, click Submit here, then immediately switch back to the iHost tab to approve the connection prompt."
+            }
+        },
+        "error": {
+            "cannot_connect": "Failed to connect to the iHost.",
+            "button_not_pressed": "The connection was not approved. Please connect to the iHost web interface to approve the connection and try again.",
+            "unknown": "Unknown error occurred"
+        },
+        "abort": {
+            "already_configured": "Device is already configured"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "last_boot": {
+                "name": "Last boot"
+            }
+        }
+    }
+}

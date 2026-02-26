@@ -1,0 +1,23 @@
+{
+  "domain": "ihost-connect",
+  "name": "iHost Connect",
+  "config_flow": true,
+  "documentation": "https://github.com/tartempio/iHost-Connect",
+  "issue_tracker": "https://github.com/tartempio/iHost-Connect/issues",
+  "dependencies": [],
+  "codeowners": [
+    "@tartempio"
+  ],
+  "requirements": [
+    "aiohttp"
+  ],
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "version": "0.1.0",
+  "zeroconf": [
+    {
+      "type": "_ewelink._tcp.local.",
+      "name": "ihost*"
+    }
+  ]
+}
