@@ -31,20 +31,36 @@ _N'hésitez pas à ⭐ ce dépôt s'il vous est utile !_
 - **Capteur binaire** — détection automatique des mises à jour du firmware (vérifie les [releases GitHub de CUBE-OS](https://github.com/eWeLinkCUBE/CUBE-OS/releases))
 - **Bouton** — redémarrez votre passerelle iHost depuis Home Assistant
 
+### Ce que cette intégration ne fait PAS
+
+> **Remarque :** Cette intégration est conçue exclusivement pour **surveiller l'état de la passerelle iHost elle-même**. Elle **N'EXPOSE PAS** les différents appareils domotiques connectés à votre iHost (comme les capteurs Zigbee, les interrupteurs, etc.), et ne permet pas de les contrôler. Pour intégrer et contrôler vos appareils iHost individuels dans Home Assistant, nous vous invitons à utiliser la fonctionnalité **Matter Bridge** intégrée au iHost.
+
 ### Entités fournies
+
+#### Capteurs
 
 | Entité | Type | Description |
 |---|---|---|
-| Last Boot | Sensor | Horodatage du dernier démarrage de la passerelle |
-| CPU Temperature | Sensor | Température du processeur (°C) |
-| CPU Usage | Sensor | Utilisation du processeur (%) |
-| RAM Usage | Sensor | Utilisation de la RAM (%) |
-| SD Card Usage | Sensor | Utilisation de la carte SD (%) |
-| Devices Count | Sensor | Nombre d'appareils connectés au iHost |
-| Security Mode | Sensor | Mode de sécurité actif (ex. À la maison, À l'extérieur, Désarmé) |
-| IP Address | Sensor | Adresse IP actuelle du iHost |
-| Firmware Update | Binary Sensor | `On` lorsqu'un nouveau firmware CUBE-OS est disponible |
-| Reboot | Button | Envoyer une commande de redémarrage au iHost |
+| Nombre d'appareils | Sensor | Nombre d'appareils connectés au iHost |
+| Mode de sécurité | Sensor | Mode de sécurité actif (ex. À la maison, À l'extérieur, Désarmé) |
+
+#### Diagnostic
+
+| Entité | Type | Description |
+|---|---|---|
+| Dernier démarrage | Sensor | Horodatage du dernier démarrage de la passerelle |
+| Température CPU | Sensor | Température du processeur (°C) |
+| Utilisation CPU | Sensor | Utilisation du processeur (%) |
+| Utilisation RAM | Sensor | Utilisation de la RAM (%) |
+| Utilisation Carte SD | Sensor | Utilisation de la carte SD (%) |
+| Adresse IP | Sensor | Adresse IP actuelle du iHost |
+| Mise à jour du firmware | Binary Sensor | `On` lorsqu'un nouveau firmware CUBE-OS est disponible |
+
+#### Configuration
+
+| Entité | Type | Description |
+|---|---|---|
+| Redémarrer | Button | Envoyer une commande de redémarrage au iHost |
 
 ---
 

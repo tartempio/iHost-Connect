@@ -30,6 +30,37 @@
         "sensor": {
             "last_boot": {
                 "name": "Last boot"
+            },
+            "cpu_temperature": {
+                "name": "CPU Temperature"
+            },
+            "cpu_usage": {
+                "name": "CPU Usage"
+            },
+            "ram_usage": {
+                "name": "RAM Usage"
+            },
+            "sd_card_usage": {
+                "name": "SD Card Usage"
+            },
+            "devices_count": {
+                "name": "Devices Count"
+            },
+            "security_mode": {
+                "name": "Security Mode"
+            },
+            "ip_address": {
+                "name": "IP Address"
+            }
+        },
+        "binary_sensor": {
+            "firmware_update": {
+                "name": "Firmware Update"
+            }
+        },
+        "button": {
+            "reboot": {
+                "name": "Reboot"
             }
         }
     }

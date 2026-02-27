@@ -2,7 +2,7 @@ import logging
 from datetime import timedelta
 
 from homeassistant.components.sensor import SensorEntity, SensorDeviceClass, SensorStateClass
-from homeassistant.const import PERCENTAGE, UnitOfTemperature
+from homeassistant.const import PERCENTAGE, UnitOfTemperature, EntityCategory
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
@@ -97,9 +97,10 @@ class IHostLastBootSensor(IHostBaseSensor):
 
     def __init__(self, coordinator: DataUpdateCoordinator, entry: ConfigEntry) -> None:
         super().__init__(coordinator, entry)
-        self._attr_name = "Last boot"
+        self._attr_translation_key = "last_boot"
         self._attr_unique_id = f"{entry.entry_id}_last_boot"
         self._attr_device_class = SensorDeviceClass.TIMESTAMP
+        self._attr_entity_category = EntityCategory.DIAGNOSTIC
 
     @property
     def native_value(self):
@@ -114,11 +115,12 @@ class IHostCpuTempSensor(IHostBaseSensor):
 
     def __init__(self, coordinator: DataUpdateCoordinator, entry: ConfigEntry) -> None:
         super().__init__(coordinator, entry)
-        self._attr_name = "CPU Temperature"
+        self._attr_translation_key = "cpu_temperature"
         self._attr_unique_id = f"{entry.entry_id}_cpu_temp"
         self._attr_device_class = SensorDeviceClass.TEMPERATURE
         self._attr_state_class = SensorStateClass.MEASUREMENT
         self._attr_native_unit_of_measurement = UnitOfTemperature.CELSIUS
+        self._attr_entity_category = EntityCategory.DIAGNOSTIC
 
     @property
     def native_value(self):
@@ -131,11 +133,12 @@ class IHostRamSensor(IHostBaseSensor):
 
     def __init__(self, coordinator: DataUpdateCoordinator, entry: ConfigEntry) -> None:
         super().__init__(coordinator, entry)
-        self._attr_name = "RAM Usage"
+        self._attr_translation_key = "ram_usage"
         self._attr_unique_id = f"{entry.entry_id}_ram_usage"
         self._attr_icon = "mdi:memory"
         self._attr_state_class = SensorStateClass.MEASUREMENT
         self._attr_native_unit_of_measurement = PERCENTAGE
+        self._attr_entity_category = EntityCategory.DIAGNOSTIC
 
     @property
     def native_value(self):
@@ -147,7 +150,7 @@ class IHostDeviceCountSensor(IHostBaseSensor):
 
     def __init__(self, coordinator: DataUpdateCoordinator, entry: ConfigEntry) -> None:
         super().__init__(coordinator, entry)
-        self._attr_name = "Devices Count"
+        self._attr_translation_key = "devices_count"
         self._attr_unique_id = f"{entry.entry_id}_device_count"
         self._attr_icon = "mdi:devices"
         self._attr_state_class = SensorStateClass.MEASUREMENT
@@ -162,7 +165,7 @@ class IHostSecuritySensor(IHostBaseSensor):
 
     def __init__(self, coordinator: DataUpdateCoordinator, entry: ConfigEntry) -> None:
         super().__init__(coordinator, entry)
-        self._attr_name = "Security Mode"
+        self._attr_translation_key = "security_mode"
         self._attr_unique_id = f"{entry.entry_id}_security_mode"
         self._attr_icon = "mdi:shield-home"
 
@@ -180,11 +183,12 @@ class IHostCpuUsedSensor(IHostBaseSensor):
 
     def __init__(self, coordinator: DataUpdateCoordinator, entry: ConfigEntry) -> None:
         super().__init__(coordinator, entry)
-        self._attr_name = "CPU Usage"
+        self._attr_translation_key = "cpu_usage"
         self._attr_unique_id = f"{entry.entry_id}_cpu_usage"
         self._attr_icon = "mdi:cpu-64-bit"
         self._attr_state_class = SensorStateClass.MEASUREMENT
         self._attr_native_unit_of_measurement = PERCENTAGE
+        self._attr_entity_category = EntityCategory.DIAGNOSTIC
 
     @property
     def native_value(self):
@@ -196,11 +200,12 @@ class IHostSdCardUsedSensor(IHostBaseSensor):
 
     def __init__(self, coordinator: DataUpdateCoordinator, entry: ConfigEntry) -> None:
         super().__init__(coordinator, entry)
-        self._attr_name = "SD Card Usage"
+        self._attr_translation_key = "sd_card_usage"
         self._attr_unique_id = f"{entry.entry_id}_sd_card_usage"
         self._attr_icon = "mdi:sd"
         self._attr_state_class = SensorStateClass.MEASUREMENT
         self._attr_native_unit_of_measurement = PERCENTAGE
+        self._attr_entity_category = EntityCategory.DIAGNOSTIC
 
     @property
     def native_value(self):
@@ -212,9 +217,10 @@ class IHostIpAddressSensor(IHostBaseSensor):
 
     def __init__(self, coordinator: DataUpdateCoordinator, entry: ConfigEntry) -> None:
         super().__init__(coordinator, entry)
-        self._attr_name = "IP Address"
+        self._attr_translation_key = "ip_address"
         self._attr_unique_id = f"{entry.entry_id}_ip_address"
         self._attr_icon = "mdi:ip-network"
+        self._attr_entity_category = EntityCategory.DIAGNOSTIC
         self._ip_address = entry.data.get(CONF_IP_ADDRESS)
 
     @property

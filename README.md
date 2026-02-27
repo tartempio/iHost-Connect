@@ -31,7 +31,20 @@ _Please ⭐ this repo if you find it useful!_
 - **Binary sensor** — automatic firmware update detection (checks the [CUBE-OS GitHub releases](https://github.com/eWeLinkCUBE/CUBE-OS/releases))
 - **Button** — reboot your iHost gateway from Home Assistant
 
+### What this integration does NOT do
+
+> **Note:** This integration is designed exclusively to **monitor the state of the iHost gateway itself**. It does **NOT** expose the individual smart home devices connected to your iHost (such as Zigbee sensors, switches, etc.), nor does it allow you to control them. To integrate and control your iHost devices in Home Assistant, we highly recommend using the **Matter Bridge** feature built into the iHost.
+
 ### Provided entities
+
+#### Sensors
+
+| Entity | Type | Description |
+|---|---|---|
+| Devices Count | Sensor | Number of devices connected to the iHost |
+| Security Mode | Sensor | Active security mode (e.g. Home, Away, Disarmed) |
+
+#### Diagnostic
 
 | Entity | Type | Description |
 |---|---|---|
@@ -40,10 +53,13 @@ _Please ⭐ this repo if you find it useful!_
 | CPU Usage | Sensor | CPU usage (%) |
 | RAM Usage | Sensor | RAM usage (%) |
 | SD Card Usage | Sensor | SD card usage (%) |
-| Devices Count | Sensor | Number of devices connected to the iHost |
-| Security Mode | Sensor | Active security mode (e.g. Home, Away, Disarmed) |
 | IP Address | Sensor | Current IP address of the iHost |
 | Firmware Update | Binary Sensor | `On` when a newer CUBE-OS firmware is available |
+
+#### Configuration
+
+| Entity | Type | Description |
+|---|---|---|
 | Reboot | Button | Send a reboot command to the iHost |
 
 ---

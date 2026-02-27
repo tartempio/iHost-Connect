@@ -6,6 +6,7 @@ from homeassistant.components.binary_sensor import (
     BinarySensorDeviceClass,
     BinarySensorEntity,
 )
+from homeassistant.const import EntityCategory
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
@@ -62,9 +63,10 @@ class IHostFirmwareUpdateBinarySensor(CoordinatorEntity, BinarySensorEntity):
         """Initialize the sensor."""
         super().__init__(coordinator)
         self._attr_has_entity_name = True
-        self._attr_name = "Firmware Update"
+        self._attr_translation_key = "firmware_update"
         self._attr_unique_id = f"{entry.entry_id}_firmware_update"
         self._attr_device_class = BinarySensorDeviceClass.UPDATE
+        self._attr_entity_category = EntityCategory.DIAGNOSTIC
         
         hub = coordinator.hass.data[DOMAIN][entry.entry_id]
         info = getattr(hub, 'bridge_info', {})
